@@ -1,0 +1,1 @@
+/home/haobo/work/data/orange/OrangePiH6/scripts/build.sh

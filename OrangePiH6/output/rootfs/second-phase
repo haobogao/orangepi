@@ -1,0 +1,22 @@
+#!/bin/sh
+export DEBIAN_FRONTEND=noninteractive
+locale-gen en_US.UTF-8
+apt-get -y update
+apt-get -y install dosfstools curl xz-utils iw rfkill wpasupplicant usbutils openssh-server alsa-utils software-properties-common ubuntu-minimal
+apt-get -y install rsync u-boot-tools vim parted network-manager usbmount git autoconf gcc libtool libsysfs-dev pkg-config libdrm-dev xutils-dev hostapd dnsmasq i2c-tools
+apt-get -y remove --purge ureadahead
+
+apt-get -y update
+apt-get -y install sunxi-disp-tool
+adduser --gecos orangepi --disabled-login orangepi --uid 1000
+adduser --gecos root --disabled-login root --uid 0
+chown -R 1000:1000 /home/orangepi
+echo "orangepi:orangepi" | chpasswd
+echo "root:orangepi" | chpasswd
+chown root:root /usr/bin/sudo
+chmod 4755 /usr/bin/sudo
+chown orangepi:orangepi /home/orangepi/.*
+chown root:root /home
+usermod -a -G sudo,adm,input,video,plugdev orangepi
+apt-get -y autoremove
+apt-get clean

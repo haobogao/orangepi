@@ -1,0 +1,33 @@
+#
+# NOTE! Don't add files that are generated in specific
+# subdirectories here. Add them in the ".gitignore" file
+# in that subdirectory instead.
+#
+# NOTE! Please use 'git ls-files -i --exclude-standard'
+# command after changing this file, to see if there are
+# any tracked files which get ignored after the change.
+#
+# Normal rules
+#
+
+# Ignore 
+
+jessie-base-arm64.tar.gz
+ArchLinuxARM-aarch64-latest.tar.gz
+xenial-base-arm64.tar.gz
+CentOS-7-aarch64-rootfs-1606.tar.xz
+ubuntu-base-16.04.5-base-arm64.tar.gz
+
+# OrangePi external
+!asound.state
+!initrd.img
+sys_config.fex
+!bug_set/
+!patch/
+!sys_config/
+!.gitignore
+
+
+.*.cmd
+.*.tmp
+.*.dts

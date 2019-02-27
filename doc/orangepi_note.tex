@@ -1,0 +1,74 @@
+\documentclass [a4paper,12pt,oneside] {report}
+\usepackage[colorlinks,linkcolor=black,anchorcolor=black,citecolor=black]{hyperref}
+\usepackage{hyperref}
+\usepackage{xeCJK}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{enumerate} %枚举宏包
+\usepackage{listings}
+\usepackage{geometry}
+\usepackage{indentfirst}
+\usepackage{xcolor}
+\punctstyle{kaiming} 
+\usepackage{booktabs}
+\usepackage{multirow}
+\definecolor{mygray}{rgb}{0.3,0.3,0.3}
+\definecolor{codegreen}{rgb}{0.8,0.8,0.8}
+\vspace{50pt}%调整表格行高
+\linespread{1.30}%行间距
+\geometry{a4paper,left=2cm,right=2cm,top=1cm,bottom=1.5cm}
+
+
+
+%设置字体
+%\setmainfont{STKAITI.TTF}
+%\setmainfont{Noto Sans CJK JP Thin}
+\setmainfont{Ubuntu}
+%\setCJKmainfont{SimSun} % 语义和语法同fontspec 
+%\setCJKsansfont{SimHei} 
+%\setCJKmonofont{SimSun}
+
+\makeatletter
+
+\lstset{
+	numbers=left,
+	numberstyle=\tiny,
+	basicstyle=\scriptsize,
+	backgroundcolor= \color{gray},
+	keywordstyle=\color{blue!70},
+	breaklines=true,
+	breakautoindent=true,
+	breakindent=4em,
+	commentstyle=\color{codegreen},
+	frame=shadowbox,
+	escapeinside=``,
+	tabsize=4,
+	framextopmargin=1pt,framexbottommargin=1pt,abovecaptionskip=-1pt,belowcaptionskip=1pt,
+  xleftmargin=3em,xrightmargin=3em,
+	language=C	
+}
+
+
+\begin{document}
+
+
+\title{\textbf{Orangepi }\\ % Title
+学习手册 } % Subtitle
+
+\author{\textsc{haobo.gao} % Author
+\\{\textbf{Personal}}} % Institution
+
+\date{\today} % Date
+\maketitle
+
+
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\include{chap/introduce}
+\include{chap/script}
+\include{chap/uboot}
+
+
+\end{document}
